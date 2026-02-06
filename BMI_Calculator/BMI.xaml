@@ -4,102 +4,105 @@
              x:Class="BMI_Calculator.BMI">
 
     <Grid RowDefinitions="Auto,Auto,*, *, *"
-       ColumnDefinitions="*,*"
-       Margin="20"
-       RowSpacing="30"
-       ColumnSpacing="20">
+          ColumnDefinitions="*,*"
+          Margin="20"
+          RowSpacing="30"
+          ColumnSpacing="20">
 
         <Label Text="BMI Calculator"
-            Grid.Row="0"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"
-            FontSize="Large"
-            TextColor="#0a0e29"/>
+               Grid.Row="0"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"
+               FontSize="Large"
+               TextColor="#0a0e29"/>
 
         <Frame Grid.Row="1"
-            Grid.Column="0" 
-            Padding="20"
-            CornerRadius="15"
-            HasShadow="True"
-            BorderColor="#0a0e29"
-            x:Name="FrameMale">
+               Grid.Column="0" 
+               Padding="20"
+               CornerRadius="15"
+               HasShadow="True"
+               BorderColor="#0a0e29"
+               x:Name="FrameMale">
             <VerticalStackLayout Spacing="10">
                 <Image Source="male.png"
-                    HeightRequest="100"/>
+                       HeightRequest="100"/>
                 <Label Text="Male"
-                    HorizontalOptions="Center"
-                    FontSize="Body"/>
+                       HorizontalOptions="Center"
+                       FontSize="Body"/>
             </VerticalStackLayout>
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer x:Name="TapMale"
-                                   Tapped="TapMale_Tapped"/>
+                                      Tapped="TapMale_Tapped"/>
             </Frame.GestureRecognizers>
         </Frame>
 
         <Frame Grid.Row="1"
-            Grid.Column="1"
-            Padding="20"
-            CornerRadius="15"
-            HasShadow="True"
-            x:Name="FrameFemale">
+               Grid.Column="1"
+               Padding="20"
+               CornerRadius="15"
+               HasShadow="True"
+               x:Name="FrameFemale">
             <VerticalStackLayout Spacing="10">
                 <Image Source="female.png"
-                    HeightRequest="100" />
+                       HeightRequest="100" />
                 <Label Text="Female"
-                    HorizontalOptions="Center"
-                    FontSize="Body" />
+                       HorizontalOptions="Center"
+                       FontSize="Body" />
             </VerticalStackLayout>
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer x:Name="TapFemale"
-                                   Tapped="TapFemale_Tapped"/>
+                                      Tapped="TapFemale_Tapped"/>
             </Frame.GestureRecognizers>
         </Frame>
 
-        <VerticalStackLayout Spacing="10" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="3">
+        <VerticalStackLayout Spacing="10" 
+                             Grid.Row="2" 
+                             Grid.ColumnSpan="2" 
+                             Grid.RowSpan="2">
 
             <Label Text="Height (inch)"
-           HorizontalOptions="Center"
-           FontSize="Body"/>
+                   HorizontalOptions="Center"
+                   FontSize="Body"/>
             <Slider ThumbColor="DarkBlue"
-          x:Name="SliderHeight"
-          Minimum="0"
-          Maximum="100"
-          Value="50"/>
+                    x:Name="SliderHeight"
+                    Minimum="0"
+                    Maximum="100"
+                    Value="50"/>
             <Label HorizontalOptions="Center"
-            FontSize="Medium"
-            FontAttributes="Bold"
-            Text="{Binding Source={x:Reference SliderHeight},Path=Value,StringFormat='{0:F0}'}"
-            x:Name="LblHeight"/>
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   Text="{Binding Source={x:Reference SliderHeight},Path=Value,StringFormat='{0:F0}'}"
+                   x:Name="LblHeight"/>
 
             <Label Text="" />
             <Label Text="" />
 
             <Label Text="Weight (lbs)"
-            HorizontalOptions="Center"
-            FontSize="Body"/>
+                   HorizontalOptions="Center"
+                   FontSize="Body"/>
             <Slider ThumbColor="DarkBlue"
-            x:Name="SliderWeight"
-            Minimum="0"
-            Maximum="300"
-            Value="90"/>
+                    x:Name="SliderWeight"
+                    Minimum="0"
+                    Maximum="300"
+                    Value="90"/>
             <Label HorizontalOptions="Center"
-            FontSize="Medium"
-            FontAttributes="Bold"
-            Text="{Binding Source={x:Reference SliderWeight},Path=Value,StringFormat='{0:F0}'}"
-            x:Name="LblWeight"/>
+                   FontSize="Medium"
+                   FontAttributes="Bold"
+                   Text="{Binding Source={x:Reference SliderWeight},Path=Value,StringFormat='{0:F0}'}"
+                   x:Name="LblWeight"/>
         </VerticalStackLayout>
 
         <Button Grid.Row="4"
-             Grid.Column="0"
-             Grid.ColumnSpan="2"
-             Text="Your Choice"
-             FontSize="Medium"
-             Padding="20"
-             FontAttributes="Bold"
-             VerticalOptions="EndAndExpand"
-             CornerRadius="15"
-             BackgroundColor="#0a0e29"
-             x:Name="BtnTap"
-             Clicked="Btn_Clicked"/>
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Text="Your Choice"
+                FontSize="Medium"
+                Padding="20"
+                FontAttributes="Bold"
+                VerticalOptions="EndAndExpand"
+                CornerRadius="15"
+                BackgroundColor="#0a0e29"
+                x:Name="BtnTap"
+                Clicked="Btn_Clicked"/>
     </Grid>
 </ContentPage>
